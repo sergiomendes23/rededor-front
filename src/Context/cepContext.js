@@ -1,5 +1,5 @@
 import { createContext } from "react";
 
-const cepContext = createContext('');
+const cepContext = createContext();
 
 export default cepContext;

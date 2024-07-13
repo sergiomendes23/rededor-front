@@ -7,18 +7,17 @@ import {
     Box,
     TextBox,
     Search
-} from "../Styles/FormStyle";
+} from "../Styles/formStyle";
 
 function Form() {
 
     const [cep, setCep] = useState("");
     const { setResponseCep } = useContext(cepContext);
-    const { setLoading } = useContext(loadingContext);
+    const { loading, setLoading } = useContext(loadingContext);
 
 
     async function submitCep(e) {
         e.preventDefault();
-        console.log('aaaaaa', setResponseCep)
 
         try {
             const cepData = await getCEP(cep)
@@ -39,13 +38,14 @@ function Form() {
                     <TextBox 
                     placeholder="Digite o CEP"
                     type = "text"
-                    id="cep"
+                    name="cep"
                     value={cep}
-                    onChange={e => setCep(e.target.value)}
                     maxLength="8"
+                    disabled={loading}
+                    onChange={e => setCep(e.target.value)}
                     required
                     ></TextBox>
-                    <Search type="submit">
+                    <Search type="submit" disabled={loading}>
                         <ion-icon name="search-outline"></ion-icon>
                     </Search>
                 </Box>
