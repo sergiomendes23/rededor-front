@@ -5,8 +5,7 @@ export const Box= styled.form`
     align-items: center;
     justify-content: center;
     }
-`;
-export const TextBox= styled.input`
+    input {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -25,7 +24,9 @@ export const TextBox= styled.input`
             font-size: 20px;
             color: #000000;
         }
+    }
 `;
+
 export const Search = styled.button`
     display: flex;
     align-items: center;

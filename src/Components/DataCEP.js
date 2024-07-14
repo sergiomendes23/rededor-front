@@ -1,21 +1,27 @@
+import { useContext } from "react";
+import cepContext from "../Context/cepContext";
+import loadingContext from "../Context/loadingContext";
+import { ThreeDots } from 'react-loader-spinner'
 import {
     Container,
     ContainerBox,
     BoxInfo,
     Name,
-    AdressInfo
+    AdressInfo,
+    Status,
+    MessageStatus,
+    ContainerStatus
 } from "../Styles/dataCEPStyle";
-import { useContext } from "react";
-import cepContext from "../Context/cepContext";
-import loadingContext from "../Context/loadingContext";
 
 function DataCEP () {
 
     const { responseCep } = useContext(cepContext);
-    const { code, state, city, district, address } = responseCep;
-    const { loading, setLoading } = useContext(loadingContext);
+    const { code, state, city, district, address, message } = responseCep;
+    const { loading} = useContext(loadingContext);
+
     return (
         <Container>
+            {loading?<ThreeDots color="grey" />:null}
             {responseCep.status === 200 && !loading?
                 <ContainerBox>
                     <BoxInfo>
@@ -40,8 +46,15 @@ function DataCEP () {
                     </BoxInfo>
                 </ContainerBox>
             :null}
+            {(responseCep.status === 404 || responseCep.status === 400 || responseCep.status === 500)  && !loading?
+            <ContainerStatus>
+                <Status>Status</Status>
+                <MessageStatus>{message}</MessageStatus> 
+            </ContainerStatus>
+            : null}
         </Container>
     )
+    
 } 
 
 export default DataCEP;

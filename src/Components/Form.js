@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useContext } from "react";
+import InputMask from 'react-input-mask';
 import getCEP from "../Service/api";
 import cepContext from "../Context/cepContext";
 import loadingContext from "../Context/loadingContext";
 import {
     Box,
-    TextBox,
     Search
 } from "../Styles/formStyle";
 
@@ -21,7 +21,6 @@ function Form() {
 
         try {
             const cepData = await getCEP(cep)
-            console.log(cepData)
             setResponseCep(cepData)
             setLoading(false)
             setCep("")
@@ -35,16 +34,18 @@ function Form() {
     return(
         <>
             <Box onSubmit={submitCep}>
-                    <TextBox 
+                    <InputMask 
                     placeholder="Digite o CEP"
                     type = "text"
                     name="cep"
+                    mask = "99999-999"
+                    maxLength="9"
                     value={cep}
-                    maxLength="8"
+                    maskChar ={null}
                     disabled={loading}
                     onChange={e => setCep(e.target.value)}
                     required
-                    ></TextBox>
+                    ></InputMask>
                     <Search type="submit" disabled={loading}>
                         <ion-icon name="search-outline"></ion-icon>
                     </Search>
