@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Container = styled.div`
 	width: 400px;
 	height: 260px;
-    margin-top: 30px;
+    margin-top: 40px;
 `;
 
 export const ContainerBox = styled.div`
@@ -29,11 +29,13 @@ export const Name = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: blue;
+    background-color: #194081;
     border-radius: 5px 0px 0px 5px;
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 20px;
+    color: #FFFFFF;
+    
 `;
 export const AdressInfo = styled.div`
 	width: 100%;
@@ -61,11 +63,13 @@ export const Status = styled.div`
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    background-color: blue;
+    background-color: #194081;
     border-radius: 5px 0px 0px 5px;
     font-family: 'Roboto';
     font-weight: 400;
     font-size: 20px;
+    color: #FFFFFF;
+
 `;
 
 export const MessageStatus = styled.div`

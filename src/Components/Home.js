@@ -1,5 +1,6 @@
 import Form from "./Form";
 import DataCEP from "./DataCEP";
+import pesquisador from "../Assets/Images/pesquisador.png";
 import {
     Container
 } from "../Styles/homeStyle";
@@ -7,6 +8,7 @@ import {
 function Home() {
 	return (
 		<Container>
+			<img src={pesquisador} />
             <Form />
 			<DataCEP />
 		</Container>

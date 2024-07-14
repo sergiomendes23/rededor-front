@@ -4,7 +4,7 @@ export const Box= styled.form`
     display: flex;
     align-items: center;
     justify-content: center;
-    }
+    margin-top: 50px;
     input {
     display: flex;
     align-items: center;
@@ -37,7 +37,7 @@ export const Search = styled.button`
     height: 55px;
     border: none;
     cursor: pointer;
-    background-color: blue;
+    background-color: #194081;
         ion-icon{
             width: 25px;
             height: 25px;
