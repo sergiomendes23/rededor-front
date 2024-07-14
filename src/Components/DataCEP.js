@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import cepContext from "../Context/cepContext";
 import loadingContext from "../Context/loadingContext";
-import { ThreeDots } from 'react-loader-spinner'
+import { ThreeDots } from 'react-loader-spinner';
 import {
     Container,
     ContainerBox,
