@@ -34,7 +34,7 @@ function Form() {
     return(
         <>
             <Box onSubmit={submitCep}>
-                    <InputMask 
+                    <InputMask
                     placeholder="Digite o CEP"
                     type = "text"
                     name="cep"

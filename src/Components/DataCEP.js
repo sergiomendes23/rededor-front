@@ -18,6 +18,7 @@ function DataCEP () {
     const { responseCep } = useContext(cepContext);
     const { code, state, city, district, address, message } = responseCep;
     const { loading} = useContext(loadingContext);
+    console.log(responseCep)
 
     return (
         <Container>

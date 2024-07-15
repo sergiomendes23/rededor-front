@@ -23,6 +23,7 @@ export const Box= styled.form`
             font-weight: 400;
             font-size: 20px;
             color: #000000;
+            cursor: text;
         }
     }
 `;
@@ -42,5 +43,6 @@ export const Search = styled.button`
             width: 25px;
             height: 25px;
             color: #FFFFFF;
+            cursor: pointer;
         }
 `;
